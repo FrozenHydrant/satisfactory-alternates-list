@@ -22,14 +22,12 @@ def main():
     buildings = {"Assembler": 15, "Constructor": 4, "Smelter": 4, "Foundry": 16, "Manufacturer": 55, "Refinery": 30, "Blender": 75, "Particle Accelerator": 1000, "Quantum Encoder": 1000}
     tree = ET.parse(sys.argv[1])
     root = tree.getroot()
-    all_items = {}
-
+    all_items = []
+    
     for child in root:
+        all_ingredients = {}
         print(child.tag, child.attrib)
-
-        # Name
-        print(child[0].text)
-
+        
         # Ingredients
         top = child[1][0]
         inputs = {}
@@ -56,7 +54,13 @@ def main():
         time = (item_amount / item_minute) * 60
         print(item_minute)
 
-        all_items[item_name] = {"input": inputs, "output": item_amount, "energy": energy, "time": time}
+        all_ingredients = {"input": inputs, "output": item_amount, "energy": energy, "time": time, "output_name": item_name}
+
+        # Name
+        print(child[0].text)
+        all_ingredients["name"] = child[0].text
+
+        all_items.append(all_ingredients)
 
     with open(sys.argv[2], "w") as output:
         output.write(json.dumps(all_items))

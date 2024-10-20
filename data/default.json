@@ -7,7 +7,7 @@
             "excited_photonic_matter": 25
         },
         "output": 1,
-        "energy": 1,
+        "energy": 1000,
         "time": 15
     },
     "ai_limiter": {
@@ -63,7 +63,7 @@
             "excited_photonic_matter": 24
         },
         "output": 1,
-        "energy": 1,
+        "energy": 1000,
         "time": 24
     },
     "alumina_solution": {
@@ -289,6 +289,23 @@
         "energy": 55,
         "time": 120
     },
+    "dark_matter_crystal": {
+        "input": {
+            "diamonds": 1,
+            "dark_matter_residue": 5
+        },
+        "output": 1,
+        "energy": 1000,
+        "time": 2
+    },
+    "diamonds": {
+        "input": {
+            "coal": 20
+        },
+        "output": 1,
+        "energy": 500,
+        "time": 2
+    },
     "electromagnetic_control_rod": {
         "input": {
             "stator": 3,
@@ -421,6 +438,16 @@
         "energy": 4,
         "time": 6
     },
+    "ficsonium": {
+        "input": {
+            "plutonium_waste": 1,
+            "singularity_cell": 1,
+            "dark_matter_residue": 20
+        },
+        "output": 1,
+        "energy": 1000,
+        "time": 6
+    },
     "ficsonium_fuel_rod": {
         "input": {
             "ficsonium": 2,
@@ -429,7 +456,7 @@
             "excited_photonic_matter": 20
         },
         "output": 1,
-        "energy": 1,
+        "energy": 1000,
         "time": 24
     },
     "fuel": {
@@ -630,7 +657,7 @@
             "excited_photonic_matter": 25
         },
         "output": 1,
-        "energy": 1,
+        "energy": 1000,
         "time": 20
     },
     "nitric_acid": {
@@ -662,6 +689,15 @@
         "output": 20,
         "energy": 75,
         "time": 24
+    },
+    "nuclear_pasta": {
+        "input": {
+            "copper_powder": 200,
+            "pressure_conversion_cube": 1
+        },
+        "output": 1,
+        "energy": 1000,
+        "time": 120
     },
     "nuke_nobelisk": {
         "input": {
@@ -702,6 +738,15 @@
         "energy": 55,
         "time": 240
     },
+    "plutonium_pellet": {
+        "input": {
+            "non-fissile_uranium": 100,
+            "uranium_waste": 25
+        },
+        "output": 30,
+        "energy": 500,
+        "time": 60
+    },
     "power_shard": {
         "input": {
             "time_crystal": 2,
@@ -710,7 +755,7 @@
             "excited_photonic_matter": 12
         },
         "output": 1,
-        "energy": 1,
+        "energy": 1000,
         "time": 12
     },
     "pressure_conversion_cube": {
@@ -977,7 +1022,7 @@
             "excited_photonic_matter": 25
         },
         "output": 1,
-        "energy": 1,
+        "energy": 1000,
         "time": 12
     },
     "sweet_fireworks": {

@@ -1,10 +1,1222 @@
 [
     {
-        "name": "Caterium Wire",
-        "input": {"caterium_ingot": 1},
-        "output": 8,
-        "output_name": "wire",
+        "input": {
+            "iron_plate": 3,
+            "rubber": 1
+        },
+        "output": 1,
+        "energy": 15,
+        "time": 16,
+        "output_name": "reinforced_iron_plate",
+        "name": "Adhered Iron Plate"
+    },
+    {
+        "input": {
+            "aluminum_ingot": 20,
+            "copper_ingot": 10
+        },
+        "output": 15,
+        "energy": 15,
+        "time": 8,
+        "output_name": "aluminum_casing",
+        "name": "Alclad Casing"
+    },
+    {
+        "input": {
+            "aluminum_ingot": 3
+        },
+        "output": 3,
         "energy": 4,
-        "time": 4
+        "time": 8,
+        "output_name": "steel_beam",
+        "name": "Aluminum Beam"
+    },
+    {
+        "input": {
+            "aluminum_ingot": 1
+        },
+        "output": 7,
+        "energy": 4,
+        "time": 8,
+        "output_name": "iron_rod",
+        "name": "Aluminum Rod"
+    },
+    {
+        "input": {
+            "steel_pipe": 4,
+            "iron_plate": 4
+        },
+        "output": 1,
+        "energy": 15,
+        "time": 60,
+        "output_name": "portable_miner",
+        "name": "Automated Miner"
+    },
+    {
+        "input": {
+            "stator": 2,
+            "wire": 40,
+            "high-speed_connector": 1
+        },
+        "output": 4,
+        "energy": 55,
+        "time": 32,
+        "output_name": "automated_wiring",
+        "name": "Automated Speed Wiring"
+    },
+    {
+        "input": {
+            "iron_ore": 5,
+            "limestone": 8
+        },
+        "output": 10,
+        "energy": 16,
+        "time": 12,
+        "output_name": "iron_ingot",
+        "name": "Basic Iron Ingot"
+    },
+    {
+        "input": {
+            "biomass": 5
+        },
+        "output": 6,
+        "energy": 4,
+        "time": 8,
+        "output_name": "coal",
+        "name": "Biocoal"
+    },
+    {
+        "input": {
+            "reinforced_iron_plate": 3,
+            "screw": 56
+        },
+        "output": 2,
+        "energy": 15,
+        "time": 24,
+        "output_name": "modular_frame",
+        "name": "Bolted Frame"
+    },
+    {
+        "input": {
+            "iron_plate": 18,
+            "screw": 50
+        },
+        "output": 3,
+        "energy": 15,
+        "time": 12,
+        "output_name": "reinforced_iron_plate",
+        "name": "Bolted Iron Plate"
+    },
+    {
+        "input": {
+            "iron_ingot": 5
+        },
+        "output": 20,
+        "energy": 4,
+        "time": 24,
+        "output_name": "screw",
+        "name": "Cast Screw"
+    },
+    {
+        "input": {
+            "plastic": 10,
+            "quickwire": 30
+        },
+        "output": 7,
+        "energy": 15,
+        "time": 48,
+        "output_name": "circuit_board",
+        "name": "Caterium Circuit Board"
+    },
+    {
+        "input": {
+            "circuit_board": 4,
+            "quickwire": 14,
+            "rubber": 6
+        },
+        "output": 1,
+        "energy": 55,
+        "time": 16,
+        "output_name": "computer",
+        "name": "Caterium Computer"
+    },
+    {
+        "input": {
+            "caterium_ingot": 1
+        },
+        "output": 8,
+        "energy": 4,
+        "time": 4,
+        "output_name": "wire",
+        "name": "Caterium Wire"
+    },
+    {
+        "input": {
+            "wood": 1
+        },
+        "output": 10,
+        "energy": 4,
+        "time": 4,
+        "output_name": "coal",
+        "name": "Charcoal"
+    },
+    {
+        "input": {
+            "raw_quartz": 3,
+            "limestone": 5
+        },
+        "output": 7,
+        "energy": 15,
+        "time": 8,
+        "output_name": "silica",
+        "name": "Cheap Silica"
+    },
+    {
+        "input": {
+            "sulfur": 6,
+            "alclad_aluminum_sheet": 7,
+            "plastic": 8,
+            "wire": 12
+        },
+        "output": 4,
+        "energy": 55,
+        "time": 8,
+        "output_name": "battery",
+        "name": "Classic Battery"
+    },
+    {
+        "input": {
+            "coal": 12,
+            "limestone": 24
+        },
+        "output": 1,
+        "energy": 500,
+        "time": 3,
+        "output_name": "diamonds",
+        "name": "Cloudy Diamonds"
+    },
+    {
+        "input": {
+            "wire": 5,
+            "heavy_oil_residue": 2
+        },
+        "output": 9,
+        "energy": 30,
+        "time": 8,
+        "output_name": "cable",
+        "name": "Coated Cable"
+    },
+    {
+        "input": {
+            "iron_plate": 2,
+            "copper_sheet": 1
+        },
+        "output": 4,
+        "energy": 15,
+        "time": 4,
+        "output_name": "empty_canister",
+        "name": "Coated Iron Canister"
+    },
+    {
+        "input": {
+            "iron_ingot": 5,
+            "plastic": 1
+        },
+        "output": 10,
+        "energy": 15,
+        "time": 8,
+        "output_name": "iron_plate",
+        "name": "Coated Iron Plate"
+    },
+    {
+        "input": {
+            "iron_ore": 15,
+            "petroleum_coke": 15
+        },
+        "output": 20,
+        "energy": 16,
+        "time": 12,
+        "output_name": "steel_ingot",
+        "name": "Coke Steel Ingot"
+    },
+    {
+        "input": {
+            "coal": 5,
+            "sulfur": 5
+        },
+        "output": 5,
+        "energy": 15,
+        "time": 12,
+        "output_name": "compacted_coal",
+        "name": "Compacted Coal"
+    },
+    {
+        "input": {
+            "iron_ore": 2,
+            "compacted_coal": 1
+        },
+        "output": 4,
+        "energy": 16,
+        "time": 24,
+        "output_name": "steel_ingot",
+        "name": "Compacted Steel Ingot"
+    },
+    {
+        "input": {
+            "heat_sink": 4,
+            "motor": 1,
+            "nitrogen_gas": 24
+        },
+        "output": 2,
+        "energy": 75,
+        "time": 24,
+        "output_name": "cooling_system",
+        "name": "Cooling Device"
+    },
+    {
+        "input": {
+            "copper_ore": 5,
+            "iron_ore": 5
+        },
+        "output": 10,
+        "energy": 16,
+        "time": 6,
+        "output_name": "copper_ingot",
+        "name": "Copper Alloy Ingot"
+    },
+    {
+        "input": {
+            "copper_sheet": 6,
+            "screw": 52
+        },
+        "output": 3,
+        "energy": 15,
+        "time": 16,
+        "output_name": "rotor",
+        "name": "Copper Rotor"
+    },
+    {
+        "input": {
+            "circuit_board": 3,
+            "crystal_oscillator": 1
+        },
+        "output": 2,
+        "energy": 15,
+        "time": 36.000036000036,
+        "output_name": "computer",
+        "name": "Crystal Computer"
+    },
+    {
+        "input": {
+            "dark_matter_residue": 10
+        },
+        "output": 1,
+        "energy": 1000,
+        "time": 3,
+        "output_name": "dark_matter_crystal",
+        "name": "Dark Matter Crystallization"
+    },
+    {
+        "input": {
+            "time_crystal": 1,
+            "dark_matter_residue": 5
+        },
+        "output": 2,
+        "energy": 1000,
+        "time": 2,
+        "output_name": "dark_matter_crystal",
+        "name": "Dark Matter Trap"
+    },
+    {
+        "input": {
+            "heavy_oil_residue": 5,
+            "water": 10
+        },
+        "output": 10,
+        "energy": 75,
+        "time": 6,
+        "output_name": "fuel",
+        "name": "Diluted Fuel"
+    },
+    {
+        "input": {
+            "heavy_oil_residue": 1,
+            "packaged_water": 2
+        },
+        "output": 2,
+        "energy": 30,
+        "time": 2,
+        "output_name": "packaged_fuel",
+        "name": "Diluted Packaged Fuel"
+    },
+    {
+        "input": {
+            "dissolved_silica": 12,
+            "limestone": 5,
+            "water": 10
+        },
+        "output": 27,
+        "energy": 75,
+        "time": 6,
+        "output_name": "silica",
+        "name": "Distilled Silica"
+    },
+    {
+        "input": {
+            "electromagnetic_control_rod": 1,
+            "rotor": 2
+        },
+        "output": 2,
+        "energy": 15,
+        "time": 16,
+        "output_name": "motor",
+        "name": "Electric Motor"
+    },
+    {
+        "input": {
+            "alumina_solution": 12,
+            "petroleum_coke": 4
+        },
+        "output": 20,
+        "energy": 30,
+        "time": 4,
+        "output_name": "aluminum_scrap",
+        "name": "Electrode Aluminum Scrap"
+    },
+    {
+        "input": {
+            "rubber": 4,
+            "petroleum_coke": 8
+        },
+        "output": 1,
+        "energy": 15,
+        "time": 12,
+        "output_name": "circuit_board",
+        "name": "Electrode Circuit Board"
+    },
+    {
+        "input": {
+            "stator": 2,
+            "high-speed_connector": 1
+        },
+        "output": 2,
+        "energy": 15,
+        "time": 15,
+        "output_name": "electromagnetic_control_rod",
+        "name": "Electromagnetic Connection Rod"
+    },
+    {
+        "input": {
+            "steel_pipe": 6,
+            "concrete": 5
+        },
+        "output": 1,
+        "energy": 15,
+        "time": 15,
+        "output_name": "encased_industrial_beam",
+        "name": "Encased Industrial Pipe"
+    },
+    {
+        "input": {
+            "uranium": 5,
+            "uranium_waste": 5,
+            "nitric_acid": 3,
+            "sulfuric_acid": 5
+        },
+        "output": 20,
+        "energy": 75,
+        "time": 12,
+        "output_name": "non-fissile_uranium",
+        "name": "Fertile Uranium"
+    },
+    {
+        "input": {
+            "sulfur": 1,
+            "compacted_coal": 2
+        },
+        "output": 6,
+        "energy": 15,
+        "time": 8,
+        "output_name": "black_powder",
+        "name": "Fine Black Powder"
+    },
+    {
+        "input": {
+            "silica": 3,
+            "limestone": 12
+        },
+        "output": 10,
+        "energy": 15,
+        "time": 12,
+        "output_name": "concrete",
+        "name": "Fine Concrete"
+    },
+    {
+        "input": {
+            "modular_frame": 1,
+            "steel_beam": 6,
+            "rubber": 8
+        },
+        "output": 2,
+        "energy": 55,
+        "time": 16,
+        "output_name": "versatile_framework",
+        "name": "Flexible Framework"
+    },
+    {
+        "input": {
+            "raw_quartz": 25,
+            "coal": 12
+        },
+        "output": 18,
+        "energy": 16,
+        "time": 20,
+        "output_name": "quartz_crystal",
+        "name": "Fused Quartz Crystal"
+    },
+    {
+        "input": {
+            "caterium_ingot": 1,
+            "copper_ingot": 5
+        },
+        "output": 12,
+        "energy": 15,
+        "time": 8,
+        "output_name": "quickwire",
+        "name": "Fused Quickwire"
+    },
+    {
+        "input": {
+            "copper_ingot": 4,
+            "caterium_ingot": 1
+        },
+        "output": 30,
+        "energy": 15,
+        "time": 20,
+        "output_name": "wire",
+        "name": "Fused Wire"
+    },
+    {
+        "input": {
+            "aluminum_casing": 3,
+            "rubber": 3
+        },
+        "output": 1,
+        "energy": 15,
+        "time": 6,
+        "output_name": "heat_sink",
+        "name": "Heat Exchanger"
+    },
+    {
+        "input": {
+            "heavy_modular_frame": 1,
+            "aluminum_ingot": 50,
+            "nitric_acid": 8,
+            "fuel": 10
+        },
+        "output": 1,
+        "energy": 75,
+        "time": 20,
+        "output_name": "fused_modular_frame",
+        "name": "Heat-Fused Frame"
+    },
+    {
+        "input": {
+            "modular_frame": 8,
+            "encased_industrial_beam": 10,
+            "steel_pipe": 36,
+            "concrete": 22
+        },
+        "output": 3,
+        "energy": 55,
+        "time": 64,
+        "output_name": "heavy_modular_frame",
+        "name": "Heavy Encased Frame"
+    },
+    {
+        "input": {
+            "modular_frame": 5,
+            "encased_industrial_beam": 3,
+            "rubber": 20,
+            "screw": 104
+        },
+        "output": 1,
+        "energy": 55,
+        "time": 16,
+        "output_name": "heavy_modular_frame",
+        "name": "Heavy Flexible Frame"
+    },
+    {
+        "input": {
+            "crude_oil": 3
+        },
+        "output": 4,
+        "energy": 30,
+        "time": 6,
+        "output_name": "heavy_oil_residue",
+        "name": "Heavy Oil Residue"
+    },
+    {
+        "input": {
+            "uranium": 5,
+            "silica": 3,
+            "sulfur": 5,
+            "quickwire": 15
+        },
+        "output": 4,
+        "energy": 55,
+        "time": 12,
+        "output_name": "encased_uranium_cell",
+        "name": "Infused Uranium Cell"
+    },
+    {
+        "input": {
+            "non-fissile_uranium": 150,
+            "aluminum_casing": 20
+        },
+        "output": 20,
+        "energy": 500,
+        "time": 120,
+        "output_name": "encased_plutonium_cell",
+        "name": "Instant Plutonium Cell"
+    },
+    {
+        "input": {
+            "bauxite": 15,
+            "coal": 10,
+            "sulfuric_acid": 5,
+            "water": 6
+        },
+        "output": 30,
+        "energy": 75,
+        "time": 6,
+        "output_name": "aluminum_scrap",
+        "name": "Instant Scrap"
+    },
+    {
+        "input": {
+            "wire": 9,
+            "rubber": 6
+        },
+        "output": 20,
+        "energy": 15,
+        "time": 12,
+        "output_name": "cable",
+        "name": "Insulated Cable"
+    },
+    {
+        "input": {
+            "quartz_crystal": 10,
+            "rubber": 7,
+            "ai_limiter": 1
+        },
+        "output": 1,
+        "energy": 55,
+        "time": 32,
+        "output_name": "crystal_oscillator",
+        "name": "Insulated Crystal Oscillator"
+    },
+    {
+        "input": {
+            "iron_ore": 8,
+            "copper_ore": 2
+        },
+        "output": 15,
+        "energy": 16,
+        "time": 12,
+        "output_name": "iron_ingot",
+        "name": "Iron Alloy Ingot"
+    },
+    {
+        "input": {
+            "iron_ingot": 20
+        },
+        "output": 5,
+        "energy": 4,
+        "time": 12,
+        "output_name": "steel_pipe",
+        "name": "Iron Pipe"
+    },
+    {
+        "input": {
+            "iron_ingot": 5
+        },
+        "output": 9,
+        "energy": 4,
+        "time": 24,
+        "output_name": "wire",
+        "name": "Iron Wire"
+    },
+    {
+        "input": {
+            "caterium_ore": 9,
+            "sulfuric_acid": 5
+        },
+        "output": 6,
+        "energy": 30,
+        "time": 10,
+        "output_name": "caterium_ingot",
+        "name": "Leached Caterium Ingot"
+    },
+    {
+        "input": {
+            "copper_ore": 9,
+            "sulfuric_acid": 5
+        },
+        "output": 22,
+        "energy": 30,
+        "time": 12,
+        "output_name": "copper_ingot",
+        "name": "Leached Copper Ingot"
+    },
+    {
+        "input": {
+            "iron_ore": 5,
+            "sulfuric_acid": 1
+        },
+        "output": 10,
+        "energy": 30,
+        "time": 6,
+        "output_name": "iron_ingot",
+        "name": "Leached Iron ingot"
+    },
+    {
+        "input": {
+            "steel_ingot": 24,
+            "concrete": 16
+        },
+        "output": 9,
+        "energy": 16,
+        "time": 12,
+        "output_name": "steel_beam",
+        "name": "Molded Beam"
+    },
+    {
+        "input": {
+            "steel_ingot": 5,
+            "concrete": 3
+        },
+        "output": 5,
+        "energy": 16,
+        "time": 6,
+        "output_name": "steel_pipe",
+        "name": "Molded Steel Pipe"
+    },
+    {
+        "input": {
+            "fuel": 4,
+            "nitrogen_gas": 3,
+            "sulfur": 4,
+            "coal": 2
+        },
+        "output": 6,
+        "energy": 75,
+        "time": 2.4,
+        "output_name": "rocket_fuel",
+        "name": "Nitro Rocket Fuel"
+    },
+    {
+        "input": {
+            "radio_control_unit": 2,
+            "cooling_system": 2
+        },
+        "output": 1,
+        "energy": 15,
+        "time": 20,
+        "output_name": "supercomputer",
+        "name": "OC Supercomputer"
+    },
+    {
+        "input": {
+            "crude_oil": 10
+        },
+        "output": 2,
+        "energy": 500,
+        "time": 3,
+        "output_name": "diamonds",
+        "name": "Oil-Based Diamonds"
+    },
+    {
+        "input": {
+            "petroleum_coke": 24
+        },
+        "output": 1,
+        "energy": 500,
+        "time": 2,
+        "output_name": "diamonds",
+        "name": "Petroleum Diamonds"
+    },
+    {
+        "input": {
+            "quickwire": 30,
+            "plastic": 7
+        },
+        "output": 2,
+        "energy": 15,
+        "time": 15,
+        "output_name": "ai_limiter",
+        "name": "Plastic AI Limiter"
+    },
+    {
+        "input": {
+            "reinforced_iron_plate": 1,
+            "rotor": 1,
+            "plastic": 3
+        },
+        "output": 2,
+        "energy": 55,
+        "time": 24,
+        "output_name": "smart_plating",
+        "name": "Plastic Smart Plating"
+    },
+    {
+        "input": {
+            "encased_plutonium_cell": 20,
+            "pressure_conversion_cube": 1
+        },
+        "output": 1,
+        "energy": 15,
+        "time": 120,
+        "output_name": "plutonium_fuel_rod",
+        "name": "Plutonium Fuel Unit"
+    },
+    {
+        "input": {
+            "polymer_resin": 1,
+            "water": 1
+        },
+        "output": 1,
+        "energy": 30,
+        "time": 2,
+        "output_name": "fabric",
+        "name": "Polyester Fabric"
+    },
+    {
+        "input": {
+            "crude_oil": 6
+        },
+        "output": 13,
+        "energy": 30,
+        "time": 6,
+        "output_name": "polymer_resin",
+        "name": "Polymer Resin"
+    },
+    {
+        "input": {
+            "aluminum_scrap": 2
+        },
+        "output": 1,
+        "energy": 4,
+        "time": 2,
+        "output_name": "aluminum_ingot",
+        "name": "Pure Aluminum Ingot"
+    },
+    {
+        "input": {
+            "caterium_ore": 2,
+            "water": 2
+        },
+        "output": 1,
+        "energy": 30,
+        "time": 5,
+        "output_name": "caterium_ingot",
+        "name": "Pure Caterium Ingot"
+    },
+    {
+        "input": {
+            "copper_ore": 6,
+            "water": 4
+        },
+        "output": 15,
+        "energy": 30,
+        "time": 24,
+        "output_name": "copper_ingot",
+        "name": "Pure Copper Ingot"
+    },
+    {
+        "input": {
+            "iron_ore": 7,
+            "water": 4
+        },
+        "output": 13,
+        "energy": 30,
+        "time": 12,
+        "output_name": "iron_ingot",
+        "name": "Pure Iron Ingot"
+    },
+    {
+        "input": {
+            "raw_quartz": 9,
+            "water": 5
+        },
+        "output": 7,
+        "energy": 30,
+        "time": 8,
+        "output_name": "quartz_crystal",
+        "name": "Pure Quartz Crystal"
+    },
+    {
+        "input": {
+            "raw_quartz": 24,
+            "nitric_acid": 2
+        },
+        "output": 15,
+        "energy": 30,
+        "time": 12,
+        "output_name": "quartz_crystal",
+        "name": "Quartz Purification"
+    },
+    {
+        "input": {
+            "quickwire": 3,
+            "rubber": 2
+        },
+        "output": 11,
+        "energy": 15,
+        "time": 24,
+        "output_name": "cable",
+        "name": "Quickwire Cable"
+    },
+    {
+        "input": {
+            "steel_pipe": 4,
+            "quickwire": 15
+        },
+        "output": 2,
+        "energy": 15,
+        "time": 15,
+        "output_name": "stator",
+        "name": "Quickwire Stator"
+    },
+    {
+        "input": {
+            "heat_sink": 4,
+            "high-speed_connector": 2,
+            "quartz_crystal": 12
+        },
+        "output": 1,
+        "energy": 55,
+        "time": 16,
+        "output_name": "radio_control_unit",
+        "name": "Radio Connection Unit"
+    },
+    {
+        "input": {
+            "crystal_oscillator": 1,
+            "circuit_board": 10,
+            "aluminum_casing": 60,
+            "rubber": 30
+        },
+        "output": 3,
+        "energy": 55,
+        "time": 40,
+        "output_name": "radio_control_unit",
+        "name": "Radio Control System"
+    },
+    {
+        "input": {
+            "rubber": 6,
+            "fuel": 6
+        },
+        "output": 12,
+        "energy": 30,
+        "time": 12,
+        "output_name": "plastic",
+        "name": "Recycled Plastic"
+    },
+    {
+        "input": {
+            "plastic": 6,
+            "fuel": 6
+        },
+        "output": 12,
+        "energy": 30,
+        "time": 12,
+        "output_name": "rubber",
+        "name": "Recycled Rubber"
+    },
+    {
+        "input": {
+            "rotor": 3,
+            "stator": 3,
+            "crystal_oscillator": 1
+        },
+        "output": 6,
+        "energy": 55,
+        "time": 48,
+        "output_name": "motor",
+        "name": "Rigor Motor"
+    },
+    {
+        "input": {
+            "limestone": 10,
+            "rubber": 2
+        },
+        "output": 9,
+        "energy": 15,
+        "time": 6,
+        "output_name": "concrete",
+        "name": "Rubber Concrete"
+    },
+    {
+        "input": {
+            "copper_sheet": 11,
+            "silica": 11
+        },
+        "output": 5,
+        "energy": 15,
+        "time": 24,
+        "output_name": "circuit_board",
+        "name": "Silicon Circuit Board"
+    },
+    {
+        "input": {
+            "quickwire": 60,
+            "silica": 25,
+            "circuit_board": 2
+        },
+        "output": 2,
+        "energy": 55,
+        "time": 40,
+        "output_name": "high-speed_connector",
+        "name": "Silicon High-Speed Connector"
+    },
+    {
+        "input": {
+            "bauxite": 10,
+            "water": 10
+        },
+        "output": 12,
+        "energy": 30,
+        "time": 3,
+        "output_name": "alumina_solution",
+        "name": "Sloppy Alumina"
+    },
+    {
+        "input": {
+            "iron_ingot": 2,
+            "coal": 2
+        },
+        "output": 3,
+        "energy": 16,
+        "time": 3,
+        "output_name": "steel_ingot",
+        "name": "Solid Steel Ingot"
+    },
+    {
+        "input": {
+            "copper_ingot": 3,
+            "water": 3
+        },
+        "output": 3,
+        "energy": 30,
+        "time": 8,
+        "output_name": "copper_sheet",
+        "name": "Steamed Copper Sheet"
+    },
+    {
+        "input": {
+            "steel_ingot": 4
+        },
+        "output": 4,
+        "energy": 4,
+        "time": 6,
+        "output_name": "empty_canister",
+        "name": "Steel Canister"
+    },
+    {
+        "input": {
+            "iron_ingot": 1,
+            "steel_ingot": 1
+        },
+        "output": 3,
+        "energy": 16,
+        "time": 4,
+        "output_name": "iron_plate",
+        "name": "Steel Cast Plate"
+    },
+    {
+        "input": {
+            "steel_ingot": 1
+        },
+        "output": 4,
+        "energy": 4,
+        "time": 5,
+        "output_name": "iron_rod",
+        "name": "Steel Rod"
+    },
+    {
+        "input": {
+            "steel_pipe": 2,
+            "wire": 6
+        },
+        "output": 1,
+        "energy": 15,
+        "time": 12,
+        "output_name": "rotor",
+        "name": "Steel Rotor"
+    },
+    {
+        "input": {
+            "steel_beam": 1
+        },
+        "output": 52,
+        "energy": 4,
+        "time": 12,
+        "output_name": "screw",
+        "name": "Steel Screw"
+    },
+    {
+        "input": {
+            "reinforced_iron_plate": 2,
+            "steel_pipe": 10
+        },
+        "output": 3,
+        "energy": 15,
+        "time": 60,
+        "output_name": "modular_frame",
+        "name": "Steeled Frame"
+    },
+    {
+        "input": {
+            "iron_plate": 10,
+            "wire": 20
+        },
+        "output": 3,
+        "energy": 15,
+        "time": 32,
+        "output_name": "reinforced_iron_plate",
+        "name": "Stitched Iron Plate"
+    },
+    {
+        "input": {
+            "computer": 3,
+            "electromagnetic_control_rod": 1,
+            "battery": 10,
+            "wire": 25
+        },
+        "output": 1,
+        "energy": 55,
+        "time": 25,
+        "output_name": "supercomputer",
+        "name": "Super-State Computer"
+    },
+    {
+        "input": {
+            "caterium_ore": 6,
+            "petroleum_coke": 2
+        },
+        "output": 3,
+        "energy": 16,
+        "time": 8,
+        "output_name": "caterium_ingot",
+        "name": "Tempered Caterium Ingot"
+    },
+    {
+        "input": {
+            "copper_ore": 5,
+            "petroleum_coke": 8
+        },
+        "output": 12,
+        "energy": 16,
+        "time": 12,
+        "output_name": "copper_ingot",
+        "name": "Tempered Copper Ingot"
+    },
+    {
+        "input": {
+            "fuel": 2,
+            "heavy_oil_residue": 4,
+            "sulfur": 3,
+            "petroleum_coke": 3
+        },
+        "output": 6,
+        "energy": 75,
+        "time": 8,
+        "output_name": "turbofuel",
+        "name": "Turbo Blend Fuel"
+    },
+    {
+        "input": {
+            "coal": 30,
+            "packaged_turbofuel": 2
+        },
+        "output": 3,
+        "energy": 500,
+        "time": 3,
+        "output_name": "diamonds",
+        "name": "Turbo Diamonds"
+    },
+    {
+        "input": {
+            "motor": 7,
+            "radio_control_unit": 9,
+            "electromagnetic_control_rod": 5,
+            "rotor": 7
+        },
+        "output": 3,
+        "energy": 55,
+        "time": 64,
+        "output_name": "turbo_motor",
+        "name": "Turbo Electric Motor"
+    },
+    {
+        "input": {
+            "heavy_oil_residue": 5,
+            "compacted_coal": 4
+        },
+        "output": 4,
+        "energy": 30,
+        "time": 8,
+        "output_name": "turbofuel",
+        "name": "Turbo Heavy Fuel"
+    },
+    {
+        "input": {
+            "motor": 4,
+            "pressure_conversion_cube": 1,
+            "packaged_nitrogen_gas": 24,
+            "stator": 8
+        },
+        "output": 2,
+        "energy": 55,
+        "time": 32,
+        "output_name": "turbo_motor",
+        "name": "Turbo Pressure Motor"
+    },
+    {
+        "input": {
+            "fuel": 6,
+            "compacted_coal": 4
+        },
+        "output": 5,
+        "energy": 30,
+        "time": 16,
+        "output_name": "turbofuel",
+        "name": "Turbofuel"
+    },
+    {
+        "input": {
+            "encased_uranium_cell": 100,
+            "electromagnetic_control_rod": 10,
+            "crystal_oscillator": 3,
+            "rotor": 10
+        },
+        "output": 3,
+        "energy": 55,
+        "time": 300,
+        "output_name": "uranium_fuel_rod",
+        "name": "Uranium Fuel Unit"
+    },
+    {
+        "input": {
+            "limestone": 6,
+            "water": 5
+        },
+        "output": 4,
+        "energy": 30,
+        "time": 3,
+        "output_name": "concrete",
+        "name": "Wet Concrete"
     }
 ]

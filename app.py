@@ -36,7 +36,7 @@ def calculate_tree(w):
                         next_stage[next_item] = 0
 
                     # Add the amount of the next item needed in the tree
-                    next_stage[next_item] += amount * default_recipes[item]["input"][next_item]
+                    next_stage[next_item] += amount * default_recipes[item]["input"][next_item] / default_recipes[item]["output"]
             else:
                 if item not in next_stage:
                     next_stage[item] = 0
@@ -44,8 +44,14 @@ def calculate_tree(w):
                     
         # Update the resources to the next level of the tree
         all_resources = next_stage
-        
-    return (all_resources, total_energy / max_time)
+
+    # Do some rounding
+    next_stage = {}
+    for item, amount in all_resources.items():
+        next_stage[item] = round(amount, 2)
+    all_resources = next_stage
+    
+    return (all_resources, round(total_energy / max_time, 2))
 
 def dict_sub(one, two):
     ans = {}
@@ -79,15 +85,20 @@ def home():
         info = {}
 
         tree, energy = calculate_tree(alternate)
-        default_tree = default_item_trees[alternate["output_name"]]
+
+        # If we don't locate an original recipe, then we have nothing to compare to, so skip it
+        if alternate["output_name"] in default_item_trees:
+            default_tree = default_item_trees[alternate["output_name"]]
+        else:
+            continue
         difference_tree = dict_sub(tree, default_tree)
-        change_in_resources_percent = dict_sum(difference_tree) / dict_sum(default_tree) * 100
+        change_in_resources_percent = round(dict_sum(difference_tree) / dict_sum(default_tree) * 100, 2)
         old_energy = default_item_powers[alternate["output_name"]]
-        change_in_energy_percent = (-1 + energy / old_energy) * 100
+        change_in_energy_percent = round((-1 + energy / old_energy) * 100, 2)
         speed = alternate["output"] * (60 / alternate["time"])
         default = default_recipes[alternate["output_name"]]
         old_speed = default["output"] * (60 / default["time"])
-        speed_percentage = (-1 + speed / old_speed) * 100
+        speed_percentage = round((-1 + speed / old_speed) * 100, 2)
 
         info["name"] = alternate["name"]
         info["materials_p"] = change_in_resources_percent

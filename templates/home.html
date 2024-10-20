@@ -17,7 +17,7 @@
 		{% for entry in entries %}
 		<div class="main_entry">
 			<div class="entry_title">{{ entry.name }}</div>
-			<div class="entry_title"><div class="{% if entry.materials_p < 0 %}yes{% else %}no{% endif %}">{{ entry.materials_p }}%</div></div>
+			<div class="entry_title"><div class="{% if entry.materials_p < 0 %}yes{% else %}no{% endif %}">{% if entry.materials_p >= 0 %}+{% endif %}{{ entry.materials_p }}%</div></div>
 			<div class="entry_title">{{ entry.energy }}</div>
 			<div class="entry_title">{{ entry.speed }}</div>
 			<div class="entry_subtitle">Produces <b>{{ entry.output }}</b></div>
