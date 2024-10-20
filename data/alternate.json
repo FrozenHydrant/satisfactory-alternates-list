@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Caterium Wire",
+        "input": {"caterium_ingot": 1},
+        "output": 8,
+        "output_name": "wire",
+        "energy": 4,
+        "time": 4
+    }
+]

@@ -1,0 +1,20 @@
+{
+    "wire": {
+        "input": {"copper_ingot": 1},
+        "output": 2,
+        "energy": 4,
+        "time": 4
+    },
+    "copper_ingot": {
+        "input": {"copper_ore": 1},
+        "output": 1,
+        "energy": 4,
+        "time": 2
+    },
+    "caterium_ingot": {
+        "input": {"caterium_ore": 3},
+        "output": 1,
+        "energy": 4,
+        "time": 4
+    }
+}

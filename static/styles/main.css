@@ -1,0 +1,50 @@
+.main_entry{
+    margin-left: 15%;
+    margin-top: 2%;
+    height: 10%;
+    width: 75%;
+    max-width: 75%;
+    position: relative;
+}
+
+.main_entry > * {
+    vertical-align: top;
+}
+
+.title {
+    position: relative;
+    margin-left: 15%;
+    margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 0%;
+    font-family: monospace;
+    font-size: 5em;
+}
+
+.entry_title{
+    position: relative;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 2em;
+    width: 24%;
+    max-width: 24%;
+    text-align: left;
+}
+
+.entry_subtitle{
+    position: relative;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 1em;
+    width: 24%;
+    max-width: 24%;
+    text-align: left;
+}
+
+.no{
+    color: red;
+}
+
+.yes{
+    color: green;
+}

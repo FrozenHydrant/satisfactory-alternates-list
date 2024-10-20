@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="{{url_for('static', filename='styles/main.css')}}" type="text/css">
+	</head>
+	<body>
+		<h1 class="title">Satisfactory Alternate Recipes Tierlist</h1>
+		<div class="main_entry">
+			<div class="entry_title">Name</div>
+			<div class="entry_title">Resources</div>
+			<div class="entry_title">Energy</div>
+			<div class="entry_title">Amount Produced</div>
+			<div class="entry_subtitle">of the alternate recipe</div>
+			<div class="entry_subtitle">relative to base recipe</div>
+			<div class="entry_subtitle">average</div>
+			<div class="entry_subtitle">per minute</div>
+		</div>
+		{% for entry in entries %}
+		<div class="main_entry">
+			<div class="entry_title">{{ entry.name }}</div>
+			<div class="entry_title"><div class="{% if entry.materials_p < 0 %}yes{% else %}no{% endif %}">{{ entry.materials_p }}%</div></div>
+			<div class="entry_title">{{ entry.energy }}</div>
+			<div class="entry_title">{{ entry.speed }}</div>
+			<div class="entry_subtitle">Produces <b>{{ entry.output }}</b></div>
+			<div class="entry_subtitle">{% for item, amount in entry.materials.items() %}<div>{% if amount >= 0 %}+{% endif %}{{amount}} {{item}}</div>{% endfor %}</div>
+			<div class="entry_subtitle">{{entry.old_energy}} (<span class="{% if entry.energy_p < 0 %}yes{% else %}no{% endif %}">{% if entry.energy_p >= 0 %}+{% endif %}{{ entry.energy_p }}%</span>)</div>
+			<div class="entry_subtitle">{{ entry.old_speed }} (<span class="{% if entry.speed_percentage > 0 %}yes{% else %}no{% endif %}">{% if entry.speed_percentage >= 0 %}+{% endif %}{{entry.speed_percentage}}%</span>)</div>
+		</div>
+		{% endfor %}
+	</body>
+
+</html>
