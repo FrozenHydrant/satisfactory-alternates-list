@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="{{url_for('static', filename='styles/main.css')}}" type="text/css">
+	</head>
+	<body>
+		<h1 class="title">Satisfactory Alternate Recipes Tierlist</h1>
+		<h2 class="subtitle">Note: we are in early <b>TESTING.</b> Some numbers may look really funny and some recipes may be in the completely wrong spot. If you want to be sure, consult a trusted source (https://www.reddit.com/r/SatisfactoryGame/comments/poc898/alternate_recipes_indepth_analysis_an_objective/).</h2>
+		<div class="main_entry">
+			<div class="entry_title">Name</div>
+			<div class="entry_title">Resources</div>
+			<div class="entry_title">Energy Consumed</div>
+			<div class="entry_title">Amount Produced</div>
+			<div class="entry_subtitle">of the alternate recipe</div>
+			<div class="entry_subtitle">relative to base recipe. The percentage is <b>weighted</b>, so saving rare materials is more important.</div>
+			<div class="entry_subtitle">average per second of production</div>
+			<div class="entry_subtitle">per minute</div>
+		</div>
+		{% for entry in entries %}
+		<div class="main_entry">
+			<div class="entry_title">{{ entry.name }}</div>
+			<div class="entry_title">{{ entry.materials_total }}</div>
+			<div class="entry_title">{{ entry.energy }}</div>
+			<div class="entry_title">{{ entry.speed }}</div>
+			<div class="entry_subtitle">Produces <b>{{ entry.output }}</b></div>
+			<div class="entry_subtitle">{% for material, amount in entry.materials.items() %}<div>{{string_cut(amount)}} {{material}}</div>{% endfor %}</div>
+			<div class="entry_subtitle"></div>
+			<div class="entry_subtitle"></div>
+		</div>
+		{% endfor %}
+		<div class="main_entry">
+			<div class="entry_title">Source Code</div>
+			<div class="entry_title"></div>
+			<div class="entry_title"></div>
+			<div class="entry_title"></div>
+			<div class="entry_subtitle"><a href="https://github.com/FrozenHydrant/satisfactory-alternates-list/tree/main">GitHub</a></div>
+		</div>
+	</body>
+
+</html>

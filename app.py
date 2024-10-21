@@ -70,9 +70,12 @@ def calculate_tree(w):
 
     return (all_resources, total_energy / max_time)
 
-# Now calculate the raw resources for all default items
+# Now calculate the raw resources for all default items and alternate items
 for item, info in default_recipes.items():
     default_item_trees[item], default_item_powers[item] = calculate_tree(info)
+
+for item in alternate_recipes:
+    default_item_trees[item["name"]], default_item_powers[item["name"]] = calculate_tree(item)
     
 def dict_sub(one, two):
     ans = {}
@@ -95,8 +98,12 @@ def translate_tree(t):
     
 def dict_sum(w, weights):
     b = 0
-    for item, amount in w.items():
-        b += amount / weights[item]
+    if weights is not None:
+        for item, amount in w.items():
+            b += amount / weights[item]
+    else:
+        for item, amount in w.items():
+            b += amount
     return b
 
 def string_num_cut_and_pretty(num):
@@ -121,7 +128,7 @@ def home():
     for alternate in alternate_recipes:
         info = {}
 
-        tree, energy = calculate_tree(alternate)
+        tree, energy = default_item_trees[alternate["name"]], default_item_powers[alternate["name"]]
 
         # If we don't locate an original recipe, then we have nothing to compare to, so skip it
         if alternate["output_name"] in default_item_trees:
@@ -171,6 +178,45 @@ def home():
         else:
             all_recipes[i]["grade"] = "D"
     return render_template("home.html", entries=all_recipes, string_cut=string_num_cut_and_pretty)
+    
+@app.route("/breakdown")
+def breakdown():
+    all_recipes = []
+    for name, crafting_details in default_recipes.items():
+        info = {}
+        
+        default_tree = default_item_trees[name]
+        materials_total = string_num_cut_and_pretty(dict_sum(default_tree, None))
+        energy = string_num_cut_and_pretty(default_item_powers[name])
+        speed = string_num_cut_and_pretty(crafting_details["output"] * (60 / crafting_details["time"]))
+
+        info["name"] = lang[name]
+        info["materials_total"] = materials_total
+        info["energy"] = energy
+        info["speed"] = speed
+        info["output"] = lang[name]
+        info["materials"] = translate_tree(default_tree)
+        
+        all_recipes.append(info)
+
+    for item in alternate_recipes:
+        info = {}
+
+        tree = default_item_trees[item["name"]]
+        materials_total = string_num_cut_and_pretty(dict_sum(tree, None))
+        energy = string_num_cut_and_pretty(default_item_powers[item["name"]])
+        speed = string_num_cut_and_pretty(item["output"] * (60 / item["time"]))
+
+        info["name"] = item["name"]
+        info["materials_total"] = materials_total
+        info["energy"] = energy
+        info["speed"] = speed
+        info["output"] = lang[item["output_name"]]
+        info["materials"] = translate_tree(tree)
+        
+        all_recipes.append(info)
+        
+    return render_template("breakdown.html", entries=all_recipes, string_cut=string_num_cut_and_pretty)
 
 if __name__ == '__main__':
     app.run(debug=True)
