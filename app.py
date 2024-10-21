@@ -2,6 +2,7 @@ from flask import Flask, render_template
 import math
 import json
 import copy
+import os
 # Thanks to https://www.freecodecamp.org/news/how-to-build-a-web-application-using-flask-and-deploy-it-to-the-cloud-3551c985e492/
 # https://www.geeksforgeeks.org/flask-rendering-templates/
 # https://stackoverflow.com/questions/62045829/make-html-text-have-2-colors-without-making-new-line
@@ -18,16 +19,16 @@ default_item_trees = {}
 default_item_powers = {}
 
 # Load information
-with open("data/default.json", "r") as opened_file:
+with open(os.path.join(os.getcwd(), "data", "default.json"), "r") as opened_file:
     default_recipes = json.loads(opened_file.read())
 
-with open("data/alternate.json", "r") as opened_file:
+with open(os.path.join(os.getcwd(), "data", "alternate.json"), "r") as opened_file:
     alternate_recipes = json.loads(opened_file.read())
 
-with open("data/weights.json", "r") as opened_file:
+with open(os.path.join(os.getcwd(), "data", "weights.json"), "r") as opened_file:
     weights = json.loads(opened_file.read())
 
-with open("lang/en_US.json", "r") as opened_file:
+with open(os.path.join(os.getcwd(), "lang", "en_US.json"), "r") as opened_file:
     lang = json.loads(opened_file.read())
 
 # Calulates the (raw) resources, energy used in a recipe
