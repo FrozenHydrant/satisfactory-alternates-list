@@ -8,7 +8,14 @@ import copy
 # https://www.geeksforgeeks.org/how-to-use-css-in-python-flask/
 # https://stackoverflow.com/questions/6036082/call-a-python-function-from-jinja2
 
+# Set up some variables
 app = Flask(__name__)
+default_recipes = None
+alternate_recipes = None
+weights = None
+lang = None
+default_item_trees = {}
+default_item_powers = {}
 
 # Calulates the (raw) resources, energy used in a recipe
 def calculate_tree(w):
@@ -146,9 +153,6 @@ def home():
         else:
             all_recipes[i]["grade"] = "D"
     return render_template("home.html", entries=all_recipes, string_cut=string_num_cut_and_pretty)
-
-default_item_trees = {}
-default_item_powers = {}
 
 if __name__ == '__main__':
 
