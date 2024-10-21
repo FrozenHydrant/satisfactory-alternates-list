@@ -17,6 +17,22 @@ lang = None
 default_item_trees = {}
 default_item_powers = {}
 
+# Load information
+with open("data/default.json", "r") as opened_file:
+    default_recipes = json.loads(opened_file.read())
+
+with open("data/alternate.json", "r") as opened_file:
+    alternate_recipes = json.loads(opened_file.read())
+
+with open("data/weights.json", "r") as opened_file:
+    weights = json.loads(opened_file.read())
+
+with open("lang/en_US.json", "r") as opened_file:
+    lang = json.loads(opened_file.read())
+
+for item, info in default_recipes.items():
+    default_item_trees[item], default_item_powers[item] = calculate_tree(info)
+
 # Calulates the (raw) resources, energy used in a recipe
 def calculate_tree(w):
     all_resources = copy.copy(w["input"])
@@ -154,22 +170,4 @@ def home():
             all_recipes[i]["grade"] = "D"
     return render_template("home.html", entries=all_recipes, string_cut=string_num_cut_and_pretty)
 
-if __name__ == '__main__':
-
-    # Load information
-    with open("data/default.json", "r") as opened_file:
-        default_recipes = json.loads(opened_file.read())
-
-    with open("data/alternate.json", "r") as opened_file:
-        alternate_recipes = json.loads(opened_file.read())
-
-    with open("data/weights.json", "r") as opened_file:
-        weights = json.loads(opened_file.read())
-
-    with open("lang/en_US.json", "r") as opened_file:
-        lang = json.loads(opened_file.read())
-
-    for item, info in default_recipes.items():
-        default_item_trees[item], default_item_powers[item] = calculate_tree(info)
-        
-    app.run(debug=True)
+app.run(debug=True)
