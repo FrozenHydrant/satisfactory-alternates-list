@@ -362,18 +362,6 @@
     },
     {
         "input": {
-            "dissolved_silica": 12,
-            "limestone": 5,
-            "water": 10
-        },
-        "output": 27,
-        "energy": 75,
-        "time": 6,
-        "output_name": "silica",
-        "name": "Distilled Silica"
-    },
-    {
-        "input": {
             "electromagnetic_control_rod": 1,
             "rotor": 2
         },
@@ -876,17 +864,6 @@
         "time": 8,
         "output_name": "quartz_crystal",
         "name": "Pure Quartz Crystal"
-    },
-    {
-        "input": {
-            "raw_quartz": 24,
-            "nitric_acid": 2
-        },
-        "output": 15,
-        "energy": 30,
-        "time": 12,
-        "output_name": "quartz_crystal",
-        "name": "Quartz Purification"
     },
     {
         "input": {
