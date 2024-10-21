@@ -50,3 +50,12 @@
 .yes{
     color: green;
 }
+
+.subtitle{
+    position: relative;
+    font-size: 1.5em;
+    font-family: monospace;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 3%;
+}
