@@ -323,6 +323,14 @@
         "energy": 500,
         "time": 2
     },
+    "dissolved_silica": {
+        "input": {
+            "nitric_acid": 2
+        },
+        "output": 12,
+        "energy": 30,
+        "time": 12
+    },
     "electromagnetic_control_rod": {
         "input": {
             "stator": 3,
@@ -889,6 +897,14 @@
         "output": 1,
         "energy": 1000,
         "time": 12
+    },
+    "polymer_resin": {
+        "input": {
+            "crude_oil": 6
+        },
+        "output": 13,
+        "energy": 30,
+        "time": 6
     },
     "pressure_conversion_cube": {
         "input": {

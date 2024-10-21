@@ -68,13 +68,10 @@ def translate_tree(t):
         translated_tree[lang[item]] = amount
     return translated_tree
     
-def dict_sum(w, weights, default):
+def dict_sum(w, weights):
     b = 0
     for item, amount in w.items():
-        if item in weights:
-            b += amount / weights[item]
-        else:
-            b += amount / default
+        b += amount / weights[item]
     return b
 
 def string_num_cut_and_pretty(num):
@@ -84,6 +81,14 @@ def string_num_cut_and_pretty(num):
         split_num[1] = split_num[1][:2]
         ans = ".".join(split_num)
     return ans
+
+def sorting_key(item):
+    if float(item["old_energy"]) > 0:
+        return float(item["materials_p"])*10 + float(item["energy_p"]) - float(item["speed_percentage"])*0.1
+    else:
+        # If the recipe is designed to produce energy (particularily nuclear power based ones), then the energy cost should be weighted much more heavily.
+        return float(item["materials_p"])*10 + float(item["energy_p"])*5 - float(item["speed_percentage"])*0.1
+
 
 @app.route("/")
 def home():
@@ -99,7 +104,7 @@ def home():
         else:
             continue
         difference_tree = dict_sub(tree, default_tree)
-        change_in_resources_percent = dict_sum(difference_tree, weights, 10000) / dict_sum(default_tree, weights, 10000) * 100
+        change_in_resources_percent = dict_sum(difference_tree, weights) / dict_sum(default_tree, weights) * 100
         old_energy = default_item_powers[alternate["output_name"]]
         change_in_energy_percent = ((energy - old_energy) / abs(old_energy)) * 100
         speed = alternate["output"] * (60 / alternate["time"])
@@ -118,8 +123,28 @@ def home():
         info["speed_percentage"] = string_num_cut_and_pretty(speed_percentage)
         info["output"] = lang[alternate["output_name"]]
 
+        # Some alternate recipes were considered as default recipes, which would mean nothing changes when considered as an alternate (and should not be included)
+        if abs(change_in_resources_percent) + abs(change_in_energy_percent) + abs(speed_percentage) < 1e-5:
+            continue
+            
         all_recipes.append(info)
-        
+
+    # Sort and assign different grades
+    all_recipes.sort(key=sorting_key)
+    amount_of_recipes = len(all_recipes)
+    for i in range(0, amount_of_recipes):
+        if i / amount_of_recipes < 0.1:
+            all_recipes[i]["grade"] = "SS"
+        elif i / amount_of_recipes < 0.2:
+            all_recipes[i]["grade"] = "S"
+        elif i / amount_of_recipes < 0.35:
+            all_recipes[i]["grade"] = "A"
+        elif i / amount_of_recipes < 0.55:
+            all_recipes[i]["grade"] = "B"
+        elif i / amount_of_recipes < 0.8:
+            all_recipes[i]["grade"] = "C"
+        else:
+            all_recipes[i]["grade"] = "D"
     return render_template("home.html", entries=all_recipes, string_cut=string_num_cut_and_pretty)
 
 default_item_trees = {}

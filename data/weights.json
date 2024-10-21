@@ -11,5 +11,8 @@
     "sam": 102,
     "crude_oil": 126,
     "water": 100000,
-    "nitrogen_gas": 120
+    "nitrogen_gas": 120,
+    "excited_photonic_matter": 10000,
+    "mycelia": 100000,
+    "wood": 100000
 }
