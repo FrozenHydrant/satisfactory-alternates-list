@@ -6,6 +6,7 @@ import copy
 # https://www.geeksforgeeks.org/flask-rendering-templates/
 # https://stackoverflow.com/questions/62045829/make-html-text-have-2-colors-without-making-new-line
 # https://www.geeksforgeeks.org/how-to-use-css-in-python-flask/
+# https://stackoverflow.com/questions/6036082/call-a-python-function-from-jinja2
 
 app = Flask(__name__)
 
@@ -23,10 +24,11 @@ def calculate_tree(w):
 
         next_stage = {}
         for item, amount in all_resources.items():
+            
             if item in default_recipes:
                 modified = True
                 # Update energy
-                total_energy += default_recipes[item]["energy"] * default_recipes[item]["time"] * math.ceil(amount / default_recipes[item]["output"])
+                total_energy += default_recipes[item]["energy"] * default_recipes[item]["time"] * amount / default_recipes[item]["output"]
                 max_time = max(max_time, default_recipes[item]["time"])
                 
                 # Update items tree
@@ -45,13 +47,7 @@ def calculate_tree(w):
         # Update the resources to the next level of the tree
         all_resources = next_stage
 
-    # Do some rounding
-    next_stage = {}
-    for item, amount in all_resources.items():
-        next_stage[item] = round(amount, 2)
-    all_resources = next_stage
-    
-    return (all_resources, round(total_energy / max_time, 2))
+    return (all_resources, total_energy / max_time)
 
 def dict_sub(one, two):
     ans = {}
@@ -72,11 +68,22 @@ def translate_tree(t):
         translated_tree[lang[item]] = amount
     return translated_tree
     
-def dict_sum(w):
+def dict_sum(w, weights, default):
     b = 0
     for item, amount in w.items():
-        b += amount
+        if item in weights:
+            b += amount / weights[item]
+        else:
+            b += amount / default
     return b
+
+def string_num_cut_and_pretty(num):
+    ans = str(num)
+    if "." in ans:
+        split_num = ans.split(".")
+        split_num[1] = split_num[1][:2]
+        ans = ".".join(split_num)
+    return ans
 
 @app.route("/")
 def home():
@@ -92,28 +99,28 @@ def home():
         else:
             continue
         difference_tree = dict_sub(tree, default_tree)
-        change_in_resources_percent = round(dict_sum(difference_tree) / dict_sum(default_tree) * 100, 2)
+        change_in_resources_percent = dict_sum(difference_tree, weights, 1000) / dict_sum(default_tree, weights, 1000) * 100
         old_energy = default_item_powers[alternate["output_name"]]
-        change_in_energy_percent = round((-1 + energy / old_energy) * 100, 2)
+        change_in_energy_percent = ((energy - old_energy) / abs(old_energy)) * 100
         speed = alternate["output"] * (60 / alternate["time"])
         default = default_recipes[alternate["output_name"]]
         old_speed = default["output"] * (60 / default["time"])
-        speed_percentage = round((-1 + speed / old_speed) * 100, 2)
+        speed_percentage = (-1 + speed / old_speed) * 100
 
         info["name"] = alternate["name"]
-        info["materials_p"] = change_in_resources_percent
-        info["energy"] = energy
-        info["speed"] = speed
+        info["materials_p"] = string_num_cut_and_pretty(change_in_resources_percent)
+        info["energy"] = string_num_cut_and_pretty(energy)
+        info["speed"] = string_num_cut_and_pretty(speed)
         info["materials"] = translate_tree(difference_tree)
-        info["old_energy"] = old_energy
-        info["energy_p"] = change_in_energy_percent
-        info["old_speed"] = old_speed
-        info["speed_percentage"] = speed_percentage
+        info["old_energy"] = string_num_cut_and_pretty(old_energy)
+        info["energy_p"] = string_num_cut_and_pretty(change_in_energy_percent)
+        info["old_speed"] = string_num_cut_and_pretty(old_speed)
+        info["speed_percentage"] = string_num_cut_and_pretty(speed_percentage)
         info["output"] = lang[alternate["output_name"]]
 
         all_recipes.append(info)
         
-    return render_template("home.html", entries=all_recipes)
+    return render_template("home.html", entries=all_recipes, string_cut=string_num_cut_and_pretty)
 
 default_item_trees = {}
 default_item_powers = {}
@@ -127,7 +134,10 @@ if __name__ == '__main__':
     with open("data/alternate.json", "r") as opened_file:
         alternate_recipes = json.loads(opened_file.read())
 
-    with open("data/en_US.json", "r") as opened_file:
+    with open("data/weights.json", "r") as opened_file:
+        weights = json.loads(opened_file.read())
+
+    with open("lang/en_US.json", "r") as opened_file:
         lang = json.loads(opened_file.read())
 
     for item, info in default_recipes.items():

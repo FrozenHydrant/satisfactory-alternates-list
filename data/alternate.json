@@ -308,6 +308,17 @@
     },
     {
         "input": {
+            "packaged_rocket_fuel": 12,
+            "dark_matter_crystal": 4
+        },
+        "output": 10,
+        "energy": 250,
+        "time": 3,
+        "output_name": "ionized_fuel",
+        "name": "Dark-Ion Fuel"
+    },
+    {
+        "input": {
             "dark_matter_residue": 10
         },
         "output": 1,
@@ -756,6 +767,17 @@
         "time": 15,
         "output_name": "ai_limiter",
         "name": "Plastic AI Limiter"
+    },
+    {
+        "input": {
+            "coal": 8,
+            "quartz_crystal": 3
+        },
+        "output": 1,
+        "energy": 250,
+        "time": 4,
+        "output_name": "diamonds",
+        "name": "Pink Diamonds"
     },
     {
         "input": {

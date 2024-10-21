@@ -19,7 +19,7 @@ def clean_amount(amount):
     return float(s)
 
 def main():
-    buildings = {"Assembler": 15, "Constructor": 4, "Smelter": 4, "Foundry": 16, "Manufacturer": 55, "Refinery": 30, "Blender": 75, "Particle Accelerator": 1000, "Quantum Encoder": 1000}
+    buildings = {"Assembler": 15, "Constructor": 4, "Smelter": 4, "Foundry": 16, "Manufacturer": 55, "Refinery": 30, "Blender": 75, "Particle Accelerator": 1000, "Quantum Encoder": 1000, "Packager": 10}
     tree = ET.parse(sys.argv[1])
     root = tree.getroot()
     all_items = {}

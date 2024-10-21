@@ -217,6 +217,15 @@
         "energy": 15,
         "time": 24
     },
+    "compacted_coal": {
+        "input": {
+            "coal": 5,
+            "sulfur": 5
+        },
+        "output": 5,
+        "energy": 15,
+        "time": 12
+    },
     "computer": {
         "input": {
             "circuit_board": 4,
@@ -524,6 +533,14 @@
         "energy": 55,
         "time": 30
     },
+    "heavy_oil_residue": {
+        "input": {
+            "crude_oil": 3
+        },
+        "output": 4,
+        "energy": 30,
+        "time": 6
+    },
     "high-speed_connector": {
         "input": {
             "quickwire": 56,
@@ -710,6 +727,114 @@
         "energy": 55,
         "time": 120
     },
+    "packaged_alumina_solution": {
+        "input": {
+            "alumina_solution": 2,
+            "empty_canister": 2
+        },
+        "output": 2,
+        "energy": 10,
+        "time": 1
+    },
+    "packaged_fuel": {
+        "input": {
+            "fuel": 2,
+            "empty_canister": 2
+        },
+        "output": 2,
+        "energy": 10,
+        "time": 3
+    },
+    "packaged_heavy_oil_residue": {
+        "input": {
+            "heavy_oil_residue": 2,
+            "empty_canister": 2
+        },
+        "output": 2,
+        "energy": 10,
+        "time": 4
+    },
+    "packaged_ionized_fuel": {
+        "input": {
+            "ionized_fuel": 4,
+            "empty_fluid_tank": 2
+        },
+        "output": 2,
+        "energy": 10,
+        "time": 3
+    },
+    "packaged_liquid_biofuel": {
+        "input": {
+            "liquid_biofuel": 2,
+            "empty_canister": 2
+        },
+        "output": 2,
+        "energy": 10,
+        "time": 3
+    },
+    "packaged_nitric_acid": {
+        "input": {
+            "nitric_acid": 1,
+            "empty_fluid_tank": 1
+        },
+        "output": 1,
+        "energy": 10,
+        "time": 2
+    },
+    "packaged_nitrogen_gas": {
+        "input": {
+            "nitrogen_gas": 4,
+            "empty_fluid_tank": 1
+        },
+        "output": 1,
+        "energy": 10,
+        "time": 1
+    },
+    "packaged_oil": {
+        "input": {
+            "crude_oil": 2,
+            "empty_canister": 2
+        },
+        "output": 2,
+        "energy": 10,
+        "time": 4
+    },
+    "packaged_rocket_fuel": {
+        "input": {
+            "rocket_fuel": 2,
+            "empty_fluid_tank": 1
+        },
+        "output": 1,
+        "energy": 10,
+        "time": 1
+    },
+    "packaged_sulfuric_acid": {
+        "input": {
+            "sulfuric_acid": 2,
+            "empty_canister": 2
+        },
+        "output": 2,
+        "energy": 10,
+        "time": 3
+    },
+    "packaged_turbofuel": {
+        "input": {
+            "turbofuel": 2,
+            "empty_canister": 2
+        },
+        "output": 2,
+        "energy": 10,
+        "time": 6
+    },
+    "packaged_water": {
+        "input": {
+            "water": 2,
+            "empty_canister": 2
+        },
+        "output": 2,
+        "energy": 10,
+        "time": 2
+    },
     "petroleum_coke": {
         "input": {
             "heavy_oil_residue": 4
@@ -720,8 +845,7 @@
     },
     "plastic": {
         "input": {
-            "polymer_resin": 6,
-            "water": 2
+            "crude_oil": 3
         },
         "output": 2,
         "energy": 30,
@@ -1066,6 +1190,15 @@
         "energy": 75,
         "time": 12
     },
+    "turbofuel": {
+        "input": {
+            "fuel": 6,
+            "compacted_coal": 4
+        },
+        "output": 5,
+        "energy": 30,
+        "time": 16
+    },
     "uranium_fuel_rod": {
         "input": {
             "encased_uranium_cell": 50,
@@ -1075,6 +1208,15 @@
         "output": 1,
         "energy": 55,
         "time": 150
+    },
+    "uranium_waste": {
+        "input": {
+            "uranium_fuel_rod": 1,
+            "water": 1200
+        },
+        "output": 50,
+        "energy": -2500,
+        "time": 300
     },
     "versatile_framework": {
         "input": {
