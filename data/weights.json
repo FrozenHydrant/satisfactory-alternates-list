@@ -9,5 +9,7 @@
     "uranium": 21,
     "bauxite": 123,
     "sam": 102,
-    "crude_oil": 126
+    "crude_oil": 126,
+    "water": 100000,
+    "nitrogen_gas": 120
 }

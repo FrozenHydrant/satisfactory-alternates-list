@@ -298,6 +298,14 @@
         "energy": 55,
         "time": 120
     },
+    "dark_matter_residue": {
+        "input": {
+            "reanimated_sam": 5
+        },
+        "output": 10,
+        "energy": 250,
+        "time": 6
+    },
     "dark_matter_crystal": {
         "input": {
             "diamonds": 1,
@@ -1168,6 +1176,14 @@
         "output": 2,
         "energy": 55,
         "time": 120
+    },
+    "time_crystal": {
+        "input": {
+            "diamonds": 2
+        },
+        "output": 1,
+        "energy": 250,
+        "time": 10
     },
     "turbo_motor": {
         "input": {

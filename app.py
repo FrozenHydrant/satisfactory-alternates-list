@@ -99,7 +99,7 @@ def home():
         else:
             continue
         difference_tree = dict_sub(tree, default_tree)
-        change_in_resources_percent = dict_sum(difference_tree, weights, 1000) / dict_sum(default_tree, weights, 1000) * 100
+        change_in_resources_percent = dict_sum(difference_tree, weights, 10000) / dict_sum(default_tree, weights, 10000) * 100
         old_energy = default_item_powers[alternate["output_name"]]
         change_in_energy_percent = ((energy - old_energy) / abs(old_energy)) * 100
         speed = alternate["output"] * (60 / alternate["time"])

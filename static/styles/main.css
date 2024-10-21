@@ -37,8 +37,9 @@
     display: inline-block;
     font-family: monospace;
     font-size: 1em;
-    width: 24%;
-    max-width: 24%;
+    width: 20%;
+    max-width: 20%;
+    margin-right: 4%;
     text-align: left;
 }
 
