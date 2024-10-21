@@ -30,9 +30,6 @@ with open("data/weights.json", "r") as opened_file:
 with open("lang/en_US.json", "r") as opened_file:
     lang = json.loads(opened_file.read())
 
-for item, info in default_recipes.items():
-    default_item_trees[item], default_item_powers[item] = calculate_tree(info)
-
 # Calulates the (raw) resources, energy used in a recipe
 def calculate_tree(w):
     all_resources = copy.copy(w["input"])
@@ -72,6 +69,10 @@ def calculate_tree(w):
 
     return (all_resources, total_energy / max_time)
 
+# Now calculate the raw resources for all default items
+for item, info in default_recipes.items():
+    default_item_trees[item], default_item_powers[item] = calculate_tree(info)
+    
 def dict_sub(one, two):
     ans = {}
     for item, amount in one.items():
