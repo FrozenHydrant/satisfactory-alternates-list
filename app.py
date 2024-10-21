@@ -172,4 +172,5 @@ def home():
             all_recipes[i]["grade"] = "D"
     return render_template("home.html", entries=all_recipes, string_cut=string_num_cut_and_pretty)
 
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
